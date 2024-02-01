@@ -13,6 +13,6 @@ describe('Galactic', () => {
     expect(galactic.mercuryAge).toEqual(41.67);
     expect(galactic.venusAge).toEqual(16.13);
     expect(galactic.marsAge).toEqual(5.32);
-    expect(galactic.jupiteryAge).toEqual(0.84);
+    expect(galactic.jupiterAge).toEqual(0.84);
   });
 });

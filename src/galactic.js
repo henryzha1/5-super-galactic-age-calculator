@@ -8,8 +8,9 @@ export default class Galactic {
 
   }
 
-
+  yearsUntil(year) {
+    return 0;
+  }
 }
-
 
 

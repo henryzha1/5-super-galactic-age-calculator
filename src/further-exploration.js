@@ -1,5 +1,5 @@
 import { Galactic } from './galactic.js';
 
-export function daysUntilBirthday(birthday, day) {
+export function daysUntilNextBirthday(birthday, day) {
   return birthday + day;
 }

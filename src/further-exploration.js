@@ -7,3 +7,7 @@ export function daysUntilNextBirthday(birthday, day) {
   let galactic = new Galactic(dayOfBirthday,dayOfDay);
   return galactic.difference;
 }
+
+export function dogAgeOnJupiterIn2073(birthday) {
+  return 0;
+}

@@ -16,5 +16,6 @@ export function dogAgeOnJupiterIn2073(birthday) {
 }
 
 export function mayflyLifespans(birthday, today) {
-  return 0;
+  let minutesDifference = daysUntilNextBirthday(birthday,today).earth*24*60;
+  return minutesDifference/5;
 }

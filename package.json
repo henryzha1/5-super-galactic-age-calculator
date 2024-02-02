@@ -1,5 +1,5 @@
 {
-  "name": "shape-tracker",
+  "name": "super-galactic-age-calculator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/henryzha1/shape-tracker.git"
+    "url": "git+https://github.com/henryzha1/5-super-galactic-age-calculator"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/henryzha1/shape-tracker/issues"
+    "url": "https://github.com/henryzha1/5-super-galactic-age-calculator/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
@@ -40,7 +40,7 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "4.15.1"
   },
-  "homepage": "https://github.com/henryzha1/shape-tracker#readme",
+  "homepage": "https://github.com/henryzha1/5-super-galactic-age-calculator#readme",
   "dependencies": {
     "bootstrap": "^5.2.3"
   }

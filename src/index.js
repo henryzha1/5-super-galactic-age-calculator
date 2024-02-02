@@ -10,6 +10,7 @@ function handleFormSubmission(galactic) {
   document.getElementById("until").removeEventListener("submit", handleSecondForm);
   document.getElementById("error2").setAttribute("class", "hidden");
   document.getElementById("convertedUntilOutput").setAttribute("class", "hidden");
+  document.getElementById("untilAge").value = "";
 
   let curr = document.createElement("span");
   curr.innerText = galactic.earth;

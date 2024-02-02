@@ -38,7 +38,8 @@ function handleSecondForm(e) {
   document.querySelector("#convertedUntilOutput > ul").innerHTML = '';
 
   const age = parseFloat(document.querySelector("#curr > span").innerText);
-  const untilAge = parseFloat(document.getElementById("untilAge").value);
+  let value = document.getElementById("untilAge").value;
+  const untilAge = !value.match(/[a-z]/gi) ? parseFloat(value) : 0;
   const untilConverted = new Galactic(age,untilAge);
 
   if(!untilConverted.status || age <= 0 || untilAge <= 0 || !untilAge) {

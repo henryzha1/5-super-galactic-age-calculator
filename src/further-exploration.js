@@ -19,3 +19,8 @@ export function mayflyLifespans(birthday, today) {
   let minutesDifference = daysUntilNextBirthday(birthday,today).earth*24*60;
   return minutesDifference/5;
 }
+
+export function sunLifespans(birthday, today) {
+  let minutesDifference = daysUntilNextBirthday(birthday,today).earth*24*60;
+  return 0;
+}

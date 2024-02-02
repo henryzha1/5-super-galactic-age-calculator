@@ -1,5 +1,5 @@
 import { Galactic } from './../src/galactic.js';
-import { daysUntilNextBirthday, dogAgeOnJupiterIn2073, mayflyLifespans } from './../src/further-exploration.js';
+import { daysUntilNextBirthday, dogAgeOnJupiterIn2073, mayflyLifespans, sunLifespans } from './../src/further-exploration.js';
 
 describe('further-exploration', () => {
 
@@ -18,7 +18,9 @@ describe('further-exploration', () => {
     const today = new Date('2024-02-01');
     expect(mayflyLifespans(birthday, today)).toEqual(2586816);
   });
-
-
-
+  test('should return how many henry lives the sun has lived', () => {
+    const birthday = new Date('1999-06-30');
+    const today = new Date('2024-02-01');
+    expect(sunLifespans(birthday, today)).toEqual(186915887.85);
+  });
 });

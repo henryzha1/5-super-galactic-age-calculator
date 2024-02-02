@@ -1,5 +1,4 @@
 import { Galactic } from './../src/galactic.js';
-import { daysUntilBirthday } from './../src/further-exploration.js';
 
 describe('Galactic', () => {
   let galactic;
@@ -33,8 +32,4 @@ describe('Galactic', () => {
     expect(galacticpastDifference.difference).toEqual({earth: 5, mercury: 20.83, venus: 8.06, mars: 2.66, jupiter: 0.42});
   });
 
-  // //further exploration
-  // test('should return number of days until last or next birthday on different planets', () => {
-  //   expect(daysUntilBirthday(2,3)).toEqual(5);
-  // });
 });

@@ -16,9 +16,9 @@ export function yearsUntil(currAge, year) {
   if(difference === 0) {
     return 0;
   } else if(difference < 0) {
-    galacticDifference .status = "future";
+    galacticDifference.status = "future";
   } else {
-    galacticDifference .status = "past";
+    galacticDifference.status = "past";
   }
   return galacticDifference;
 }

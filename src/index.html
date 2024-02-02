@@ -12,7 +12,7 @@
       <input id="age" type="text" name="age">
       <button type="submit">Calculate!</button>
     </form>
-    <p id="error" class="hidden">Please submit an age larger than 0</p>;
+    <p id="error" class="hidden">Please submit an numerial age larger than 0</p>;
     <div id="convertedAges" class="hidden">
       <h2 id="curr">Current Age: </h2>
       <h3>List of ages on different planets:</h3>
@@ -20,11 +20,17 @@
       </ul>
     </div>
     <form id="until" class="hidden">
-      <label for="past">Enter a past age to calculate how much time has passed: </label>
-      <input id="past" type="text" name="past"> <br>
-      <label for="future">Enter a future age to calculate how much time it will take: </label>
-      <input id="future" type="text" name="future"> <br>
+      <label for="untilAge">Enter a past or future age to calculate how much time has passed or will pass from current age: </label> <br>
+      <input id="untilAge" type="text" name="untilAge"> <br>
       <button type="submit">Calculate!</button>
     </form>
+    <div id="convertedUntil">
+      <p id="error2" class="hidden">Please enter a valid age! (cannot be same as current age, or less or equal to 0)</p>
+      <div id="convertedUntilOutput" class="hidden">
+        <h3> </h3>
+        <ul>
+        </ul>
+      </div>
+    </div>
 </body>
 </html>

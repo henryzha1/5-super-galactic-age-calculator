@@ -9,7 +9,7 @@ describe('further-exploration', () => {
     const day = new Date('2024-02-05');
     expect(daysUntilNextBirthday(birthday,day)).toEqual(galactic.difference);
   });
-  test('should return number of days until last or next birthday on different planets', () => {
+  test('should return dog age on jupiter in 2073 of favorite public figure', () => {
     const birthday = new Date('1999-06-30'); //birthday of favorite public figure
     expect(dogAgeOnJupiterIn2073(birthday)).toEqual(43.42);
   });

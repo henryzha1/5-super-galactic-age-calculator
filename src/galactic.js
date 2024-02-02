@@ -1,10 +1,10 @@
 export class Galactic {
   constructor(earthAge) {
-    this.earthAge = earthAge;
-    this.mercuryAge = parseFloat((earthAge/0.24).toFixed(2));
-    this.venusAge = parseFloat((earthAge/0.62).toFixed(2));
-    this.marsAge = parseFloat((earthAge/1.88).toFixed(2));
-    this.jupiterAge = parseFloat((earthAge/11.86).toFixed(2));
+    this.earth = earthAge;
+    this.mercury = parseFloat((earthAge/0.24).toFixed(2));
+    this.venus = parseFloat((earthAge/0.62).toFixed(2));
+    this.mars = parseFloat((earthAge/1.88).toFixed(2));
+    this.jupiter = parseFloat((earthAge/11.86).toFixed(2));
   }
 
   
@@ -22,5 +22,5 @@ export function yearsUntil(currAge, year) {
     startingIndex = 0;
   }
   let galacticDifference = new Galactic(difference);
-  return [startingIndex, galacticDifference.earthAge, galacticDifference.mercuryAge, galacticDifference.venusAge, galacticDifference.marsAge, galacticDifference.jupiterAge];
+  return [startingIndex, galacticDifference.earth, galacticDifference.mercury, galacticDifference.venus, galacticDifference.mars, galacticDifference.jupiter];
 }

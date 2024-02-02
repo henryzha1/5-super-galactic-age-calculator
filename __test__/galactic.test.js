@@ -19,7 +19,11 @@ describe('Galactic', () => {
     expect(yearsUntil(galactic.earth, 10)).toEqual(0);
   });
   test('should return an array of years until given year on earth and different planets with index 0 being 0 for past date and 1 for future date', () => {
-    expect(yearsUntil(galactic.earth, 15)).toEqual([1,5,20.83,8.06,2.66,0.42]);
-    expect(yearsUntil(galactic.earth, 5)).toEqual([0,5,20.83,8.06,2.66,0.42]);
+    const galacticfutureDifference = new Galactic(5);
+    galacticfutureDifference.status = "future";
+    const galacticpastDifference = new Galactic(5);
+    galacticpastDifference.status = "past";
+    expect(yearsUntil(galactic.earth, 15)).toEqual(galacticfutureDifference);
+    expect(yearsUntil(galactic.earth, 5)).toEqual(galacticpastDifference);
   });
 });

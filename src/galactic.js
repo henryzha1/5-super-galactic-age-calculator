@@ -11,16 +11,14 @@ export class Galactic {
 }
 
 export function yearsUntil(currAge, year) {
-  let startingIndex = -1;
   let difference = currAge - year;
+  let galacticDifference = new Galactic(Math.abs(difference));
   if(difference === 0) {
     return 0;
   } else if(difference < 0) {
-    startingIndex = 1;
-    difference = Math.abs(difference);
+    galacticDifference .status = "future";
   } else {
-    startingIndex = 0;
+    galacticDifference .status = "past";
   }
-  let galacticDifference = new Galactic(difference);
-  return [startingIndex, galacticDifference.earth, galacticDifference.mercury, galacticDifference.venus, galacticDifference.mars, galacticDifference.jupiter];
+  return galacticDifference;
 }

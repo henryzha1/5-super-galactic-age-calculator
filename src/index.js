@@ -39,7 +39,7 @@ function handleSecondForm(e) {
 
   const age = parseFloat(document.querySelector("#curr > span").innerText);
   let value = document.getElementById("untilAge").value;
-  const untilAge = !value.match(/[a-z]/gi) ? parseFloat(value) : 0;
+  const untilAge = !value.match(/[a-z\W_]/gi) ? parseFloat(value) : 0;
   const untilConverted = new Galactic(age,untilAge);
 
   if(!untilConverted.status || age <= 0 || untilAge <= 0 || !untilAge) {
@@ -80,8 +80,9 @@ function handleSecondForm(e) {
 
 document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
-  const galactic = new Galactic(parseFloat(document.getElementById("age").value));
-  if(!galactic.earth || galactic.earth <= 0) {
+  let value = document.getElementById("age").value;
+  const galactic = new Galactic(!value.match(/[a-z\W_]/gi) ? parseFloat(value) : 0);
+  if(!galactic.earth || galactic.earth <= 0) { //invalid age
     document.getElementById("error").removeAttribute("class");
     document.getElementById("convertedAges").setAttribute("class", "hidden");
     document.getElementById("until").setAttribute("class", "hidden");

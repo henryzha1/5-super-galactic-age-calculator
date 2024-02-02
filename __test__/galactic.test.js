@@ -6,7 +6,7 @@ describe('Galactic', () => {
     galactic = new Galactic(10);
   });
 
-  test('should create Galactic object with earthAge property', () => {
+  test('should create Galactic object with earth property', () => {
     expect(galactic.earth).toEqual(10);
   });
   test('should create Galactic object with age of other planets', () => {

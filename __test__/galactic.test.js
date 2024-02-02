@@ -29,8 +29,8 @@ describe('Galactic', () => {
   test('should return an object with key-value pairs of [planet] = age difference converted', () => {
     const galacticfutureDifference = new Galactic(5, 10);
     const galacticpastDifference = new Galactic(10, 5);
-    expect(galacticfutureDifference.difference).toEqual("future");
-    expect(galacticpastDifference.difference).toEqual("past");
+    expect(galacticfutureDifference.difference).toEqual({earth: 5, mercury: 20.83, venus: 8.06, mars: 2.66, jupiter: 0.42});
+    expect(galacticpastDifference.difference).toEqual({earth: 5, mercury: 20.83, venus: 8.06, mars: 2.66, jupiter: 0.42});
   });
 
   // //further exploration

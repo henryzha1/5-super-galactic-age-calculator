@@ -10,9 +10,9 @@ export class Galactic {
   
 }
 
-export function yearsUntil(galactic, year) {
+export function yearsUntil(currAge, year) {
   let startingIndex = -1;
-  let difference = galactic.earthAge - year;
+  let difference = currAge - year;
   if(difference === 0) {
     return 0;
   } else if(difference < 0) {

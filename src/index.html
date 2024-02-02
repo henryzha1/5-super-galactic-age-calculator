@@ -3,9 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
+  <title>Galactic Age Calculator</title>
 </head>
 <body>
-  
+    <h1>Galactic Age Calculator</h1>
+    <form id="form">
+      <label for="age">Current Age: </label>
+      <input id="age" type="text" name="age">
+      <button type="submit">Calculate!</button>
+    </form>
+    <form id="until" class="hidden">
+      <label for="past">Enter a past age to calculate how much time has passed: </label>
+      <input id="past" type="text" name="past">
+      <label for="future">Enter a future age to calculate how much time it will take: </label>
+      <input id="future" type="text" name="future">
+      <button type="submit">Calculate!</button>
+    </form>
 </body>
 </html>

@@ -16,10 +16,10 @@ describe('Galactic', () => {
     expect(galactic.jupiterAge).toEqual(0.84);
   });
   test('should return 0 given same year in years from function', () => {
-    expect(yearsUntil(galactic, 10)).toEqual(0);
+    expect(yearsUntil(galactic.earthAge, 10)).toEqual(0);
   });
   test('should return an array of years until given year on earth and different planets with index 0 being 0 for past date and 1 for future date', () => {
-    expect(yearsUntil(galactic, 15)).toEqual([1,5,20.83,8.06,2.66,0.42]);
-    expect(yearsUntil(galactic, 5)).toEqual([0,5,20.83,8.06,2.66,0.42]);
+    expect(yearsUntil(galactic.earthAge, 15)).toEqual([1,5,20.83,8.06,2.66,0.42]);
+    expect(yearsUntil(galactic.earthAge, 5)).toEqual([0,5,20.83,8.06,2.66,0.42]);
   });
 });

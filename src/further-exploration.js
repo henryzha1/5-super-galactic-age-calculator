@@ -21,6 +21,9 @@ export function mayflyLifespans(birthday, today) {
 }
 
 export function sunLifespans(birthday, today) {
-  let minutesDifference = daysUntilNextBirthday(birthday,today).earth*24*60;
-  return 0;
+  let dayOfBirthday = birthday.getTime()/1000/60/60/24/365;
+  let dayOfToday = today.getTime()/1000/60/60/24/365;
+
+  let yearsDifference = new Galactic(dayOfBirthday, dayOfToday);
+  return parseFloat((4600000000/parseFloat((yearsDifference.difference.earth).toFixed(2))).toFixed(2));
 }

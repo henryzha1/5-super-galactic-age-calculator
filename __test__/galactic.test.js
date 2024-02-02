@@ -20,14 +20,18 @@ describe('Galactic', () => {
     let newGalactic = new Galactic(10,10);
     expect(newGalactic.difference).toEqual("");
   });
-  // test('should return an array of years until given year on earth and different planets with index 0 being 0 for past date and 1 for future date', () => {
-  //   const galacticfutureDifference = new Galactic(5);
-  //   galacticfutureDifference.status = "future";
-  //   const galacticpastDifference = new Galactic(5);
-  //   galacticpastDifference.status = "past";
-  //   expect(yearsUntil(galactic.earth, 15)).toEqual(galacticfutureDifference);
-  //   expect(yearsUntil(galactic.earth, 5)).toEqual(galacticpastDifference);
-  // });
+  test('should return future for future age and past for past age', () => {
+    const galacticfutureDifference = new Galactic(5, 10);
+    const galacticpastDifference = new Galactic(10, 5);
+    expect(galacticfutureDifference.status).toEqual("future");
+    expect(galacticpastDifference.status).toEqual("past");
+  });
+  test('should return an object with key-value pairs of [planet] = age difference converted', () => {
+    const galacticfutureDifference = new Galactic(5, 10);
+    const galacticpastDifference = new Galactic(10, 5);
+    expect(galacticfutureDifference.difference).toEqual("future");
+    expect(galacticpastDifference.difference).toEqual("past");
+  });
 
   // //further exploration
   // test('should return number of days until last or next birthday on different planets', () => {

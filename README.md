@@ -7,9 +7,8 @@ by [Henry Zhang]
 2. [Description](#description)
 3. [Setup Requirements](#setup-requirements)
 4. [Link](#link)
-5. [Tests](#tests)
-6. [Known Bugs](#known-bugs)
-7. [License](#license)
+5. [Known Bugs](#known-bugs)
+6. [License](#license)
 
 ## Technologies used
 - npm

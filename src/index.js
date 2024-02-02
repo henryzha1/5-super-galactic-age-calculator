@@ -2,6 +2,7 @@ import './css/styles.css';
 import { Galactic } from './galactic.js';
 
 function handleFormSubmission(galactic) {
+  // resets window
   document.getElementById("convertedAges").removeAttribute("class");
   document.querySelector("#convertedAges > ul").innerHTML = '';
   if(document.querySelector("#curr > span")) {
@@ -12,6 +13,7 @@ function handleFormSubmission(galactic) {
   document.getElementById("convertedUntilOutput").setAttribute("class", "hidden");
   document.getElementById("untilAge").value = "";
 
+  // creates converted ages
   let curr = document.createElement("span");
   curr.innerText = galactic.earth;
   document.getElementById("curr").appendChild(curr);
@@ -27,6 +29,7 @@ function handleFormSubmission(galactic) {
     document.querySelector("#convertedAges > ul").append(li);
   });
 
+  // past or future date feature
   document.getElementById("until").removeAttribute("class");
   document.getElementById("until").addEventListener("submit", handleSecondForm);
 }
@@ -37,6 +40,8 @@ function handleSecondForm(e) {
   document.getElementById("convertedUntilOutput").setAttribute("class", "hidden");
   document.querySelector("#convertedUntilOutput > ul").innerHTML = '';
 
+  // getting age from DOM and checking for letters and symbols so we don't pass
+  // anything to event listener so we can remove the event listener
   const age = parseFloat(document.querySelector("#curr > span").innerText);
   let value = document.getElementById("untilAge").value;
   const untilAge = !value.match(/[a-z\W_]/gi) ? parseFloat(value) : 0;
@@ -81,6 +86,7 @@ function handleSecondForm(e) {
 document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
   let value = document.getElementById("age").value;
+  // checks for letters or symbols. apparently parsefloat doesn't do that exactly
   const galactic = new Galactic(!value.match(/[a-z\W_]/gi) ? parseFloat(value) : 0);
   if(!galactic.earth || galactic.earth <= 0) { //invalid age
     document.getElementById("error").removeAttribute("class");

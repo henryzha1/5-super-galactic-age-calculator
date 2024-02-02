@@ -14,3 +14,7 @@ export function dogAgeOnJupiterIn2073(birthday) {
   let daysUntil = new Galactic((daysUntilNextBirthday(birthday,day).earth/365).toFixed(2)*7);
   return daysUntil.jupiter;
 }
+
+export function mayflyLifespans(birthday, today) {
+  return 0;
+}

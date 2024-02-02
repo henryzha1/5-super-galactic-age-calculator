@@ -1,5 +1,5 @@
 import './css/styles.css';
-import { Galactic, yearsUntil } from './galactic.js';
+import { Galactic } from './galactic.js';
 
 function handleFormSubmission(galactic) {
   document.getElementById("convertedAges").removeAttribute("class");
@@ -39,33 +39,31 @@ function handleSecondForm(e) {
 
   const age = parseFloat(document.querySelector("#curr > span").innerText);
   const untilAge = parseFloat(document.getElementById("untilAge").value);
-  const untilConverted = yearsUntil(age,untilAge);
+  const untilConverted = new Galactic(age,untilAge);
 
-  if(!untilConverted || age <= 0 || untilAge <= 0 || !untilAge) {
+  if(!untilConverted.status || age <= 0 || untilAge <= 0 || !untilAge) {
     document.getElementById("error2").removeAttribute("class");
   } else {
     document.getElementById("convertedUntilOutput").removeAttribute("class");
-    let keys = Object.keys(untilConverted);
+    let keys = Object.keys(untilConverted.difference);
     if(untilConverted.status === "future") {
       document.querySelector("#convertedUntilOutput > h3").innerText = "Years until age on different planets:";
-      keys.forEach((key) => {
-        if(key !== "status") { //x years have yet to pass on
-          let li = document.createElement("li");
-          li.innerText = untilConverted[key] + " years have yet to pass on ";
-          let span = document.createElement("span");
-          span.innerText = key;
-          span.setAttribute("class","capitalize");
-          li.appendChild(span);
+      keys.forEach((key) => { //x years have yet to pass on
+        let li = document.createElement("li");
+        li.innerText = untilConverted.difference[key] + " years have yet to pass on ";
+        let span = document.createElement("span");
+        span.innerText = key;
+        span.setAttribute("class","capitalize");
+        li.appendChild(span);
 
-          document.querySelector("#convertedUntilOutput > ul").append(li);
-        }
+        document.querySelector("#convertedUntilOutput > ul").append(li);
       }) ;
     } else {
       document.querySelector("#convertedUntilOutput > h3").innerText = "Years that have passed since current age on different planets:";
       keys.forEach((key) => {
         if(key !== "status") { //x years have passed on 
           let li = document.createElement("li");
-          li.innerText = untilConverted[key] + " years have passed on ";
+          li.innerText = untilConverted.difference[key] + " years have passed on ";
           let span = document.createElement("span");
           span.innerText = key;
           span.setAttribute("class","capitalize");

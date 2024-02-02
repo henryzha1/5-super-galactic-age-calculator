@@ -1,4 +1,4 @@
-import { Galactic, yearsUntil } from './../src/galactic.js';
+import { Galactic } from './../src/galactic.js';
 import { daysUntilBirthday } from './../src/further-exploration.js';
 
 describe('Galactic', () => {

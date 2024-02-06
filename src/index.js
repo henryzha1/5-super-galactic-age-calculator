@@ -45,7 +45,8 @@ function handleSecondForm(e) {
   const age = parseFloat(document.querySelector("#curr > span").innerText);
   let value = document.getElementById("untilAge").value;
   const untilAge = !value.match(/[a-z\W_]/gi) ? parseFloat(value) : 0;
-  const untilConverted = new Galactic(age,untilAge);
+  let untilConverted = new Galactic(age);
+  untilConverted.getDifference(untilAge);
 
   if(!untilConverted.status || age <= 0 || untilAge <= 0 || !untilAge) {
     document.getElementById("error2").removeAttribute("class");

@@ -4,7 +4,8 @@ export function daysUntilNextBirthday(birthday, day) {
   let dayOfBirthday = birthday.getTime()/1000/60/60/24;
   let dayOfDay = day.getTime()/1000/60/60/24;
 
-  let galactic = new Galactic(dayOfBirthday,dayOfDay);
+  let galactic = new Galactic(dayOfBirthday);
+  galactic.getDifference(dayOfDay);
   return galactic.difference;
 }
 
@@ -24,6 +25,7 @@ export function sunLifespans(birthday, today) {
   let dayOfBirthday = birthday.getTime()/1000/60/60/24/365;
   let dayOfToday = today.getTime()/1000/60/60/24/365;
 
-  let yearsDifference = new Galactic(dayOfBirthday, dayOfToday);
+  let yearsDifference = new Galactic(dayOfBirthday);
+  yearsDifference.getDifference(dayOfToday);
   return parseFloat((4600000000/parseFloat((yearsDifference.difference.earth).toFixed(2))).toFixed(2));
 }

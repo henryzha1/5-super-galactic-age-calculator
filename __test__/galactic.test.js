@@ -16,20 +16,20 @@ describe('Galactic', () => {
     expect(galactic.jupiter).toEqual(0.84);
   });
   test('should return 0 given same year in years from function', () => {
-    let newGalactic = new Galactic(10,10);
-    expect(newGalactic.difference).toEqual("");
+    galactic.getDifference(10);
+    expect(galactic.difference).toEqual("");
   });
-  test('should return future for future age and past for past age', () => {
-    const galacticfutureDifference = new Galactic(5, 10);
-    const galacticpastDifference = new Galactic(10, 5);
-    expect(galacticfutureDifference.status).toEqual("future");
-    expect(galacticpastDifference.status).toEqual("past");
+  test('should return future for future age', () => {
+    galactic.getDifference(15);
+    expect(galactic.status).toEqual("future");
+  });
+  test('should return past for past age', () => {
+    galactic.getDifference(5);
+    expect(galactic.status).toEqual("past");
   });
   test('should return an object with key-value pairs of [planet] = age difference converted', () => {
-    const galacticfutureDifference = new Galactic(5, 10);
-    const galacticpastDifference = new Galactic(10, 5);
-    expect(galacticfutureDifference.difference).toEqual({earth: 5, mercury: 20.83, venus: 8.06, mars: 2.66, jupiter: 0.42});
-    expect(galacticpastDifference.difference).toEqual({earth: 5, mercury: 20.83, venus: 8.06, mars: 2.66, jupiter: 0.42});
+    galactic.getDifference(15);
+    expect(galactic.difference).toEqual({earth: 5, mercury: 20.83, venus: 8.06, mars: 2.66, jupiter: 0.42});
   });
 
 });
